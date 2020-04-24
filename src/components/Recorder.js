@@ -57,13 +57,11 @@ class Recorder extends Component {
     componentDidMount(){
         navigator.getUserMedia({audio: true}, 
         () => {
-            console.log('Permission Granted');
             this.setState({
                 isBlocked: false,
             });
         },
         () => {
-            console.log('Permission Denied');
             this.setState({
                 isBlocked: true,
             });
@@ -74,7 +72,7 @@ class Recorder extends Component {
         return (
             <div id="Recorder">
                 <button className="btn" id="recorder" onClick={this.handleClick} ><i className="fa fa-microphone"></i></button>  
-                <audio src={this.state.audioURL} id="audio-playback" controls="controls"></audio>        
+                {this.props.isTextChanged && <audio src={this.state.audioURL} id="audio-playback" controls="controls"></audio>}        
             </div>
         )
     }
