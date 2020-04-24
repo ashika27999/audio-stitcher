@@ -1,0 +1,49 @@
+.card{
+  background-color: aqua;
+}
+
+.card-container{
+  padding: 20px;
+  padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#user{
+  padding-top: 10px;
+}
+
+input {
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 10px;
+}
+
+#bot-name{
+  margin-left: 14px;
+}
+
+#recorder{
+  background-color: #4CAF50; 
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.submit{
+  padding: 5px;
+  padding-right: 7px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  background-color: #4CAF50; 
+  color: white;
+}
+
+audio{
+  width: 250px;
+  height: 20px;
+  margin-left: 10px;
+}
