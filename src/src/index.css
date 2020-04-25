@@ -1,0 +1,102 @@
+.card{
+  background-color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.card-container{
+  padding: 20px;
+  padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+#user{
+  padding-top: 10px;
+}
+
+input {
+  height: 20px;
+  flex: 0 0 200px;
+  margin-left: 10px;
+}
+
+#bot-name{
+  margin-left: 14px;
+}
+
+#recorder{
+  background-color: #4CAF50; 
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border: none;
+}
+
+.submit{
+  padding: 5px;
+  padding-right: 7px;
+  margin-left: 5px;
+  margin-bottom: 2px;
+  background-color: #4CAF50; 
+  color: white;
+}
+
+audio{
+  width: 250px;
+  height: 20px;
+  margin-left: 10px;
+}
+
+#audio-playback{
+  margin-top: 5px;
+}
+
+#add-card{
+  font-size: 20px;
+  float: left;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  margin-top: 10px;
+  margin-left: 1px;
+  padding: 10px;
+  width: 100px;
+}
+
+#delete-card{
+  font-size: 20px;
+  background-color: #4CAF50;
+  color: white;
+
+}
+
+#merge-clips{
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  margin-left: 10px;
+}
+
+#merge-all-blobs{
+  font-size: 20px;
+  float: left;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 10px;
+  width: 125px;
+}
+
+#audio-merge-all{
+  margin-top: 25px;
+
+}
