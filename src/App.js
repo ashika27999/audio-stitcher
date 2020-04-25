@@ -14,12 +14,13 @@ class App extends Component {
     tempCards.push(<Card cardNumber={this.state.cards.length} parentCallBack={this.handleDeleteCard}/>)
     this.setState({
       cards: tempCards,
-    }, console.log(this.state.cards));
+    });
   }
 
   handleDeleteCard = (cardNumber) => {
     let tempCards = this.state.cards;
-    tempCards = tempCards.splice(cardNumber, 1); 
+    delete tempCards[cardNumber];
+    console.log(tempCards);
     this.setState({
       cards: tempCards,
     });

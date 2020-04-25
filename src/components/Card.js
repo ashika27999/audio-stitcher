@@ -60,13 +60,12 @@ export class Card extends Component {
                 bot: this.state.botSubmittedText,
                 user: this.state.userSubmittedText,
             }
-        }, this.fallbackFunction);
+        }, this.callbackFunction);
     }
 
-    fallbackFunction = () => {
+    callbackFunction = () => {
         try{
             transcripts[this.props.cardNumber] = this.state.transcript;
-            transcripts[this.props.cardNumber]["conversationID"] = this.props.cardNumber;
         }
         catch(error){
             console.log(error);
@@ -74,7 +73,7 @@ export class Card extends Component {
     }
 
     deleteCard = () => {
-        transcripts.splice(this.props.cardNumber, 1);
+        delete transcripts[this.props.cardNumber]
         this.props.parentCallBack(this.props.cardNumber);
     }
 
