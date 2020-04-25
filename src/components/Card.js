@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Recorder from './Recorder';
+import { saveAs } from 'file-saver';
 
 const transcripts = [];
 
@@ -24,6 +25,7 @@ export class Card extends Component {
             isMerged: false,
         }
     }
+
 
     handleBotTextChange = (event) => {
         this.setState({
@@ -92,12 +94,17 @@ export class Card extends Component {
 
     mergeBlobs = () => {
         var mergedBlob = new Blob([this.state.botBlob, this.state.userBlob], { type: "audio/mp3" });
-        const audioURL = URL.createObjectURL(mergedBlob);
-        console.log(audioURL);
+        const mergedURL = URL.createObjectURL(mergedBlob);
         this.setState({
             isMerged: true,
-            mergedURL: audioURL,
-        });
+            mergedURL: mergedURL,
+        }, this.props.passMergedBlob(mergedBlob));
+    }
+
+    downloadTranscript = () => {
+        let transcriptsJSON = JSON.stringify(transcripts[this.props.cardNumber]);
+        let transcript = new Blob([transcriptsJSON], {type: "application/json"});
+        saveAs(transcript, 'transcript.json');
     }
 
     render() {
@@ -120,6 +127,7 @@ export class Card extends Component {
                     </div>
                     <button className="btn" id="delete-card" onClick={this.deleteCard} ><i className="fa fa-trash"></i></button>
                     <button className="btn" id="merge-clips" onClick={this.mergeBlobs} >Merge</button>
+                    <button className="btn" id="merge-clips" onClick={this.downloadTranscript}>Download Transcript</button>
                     {this.state.isMerged &&<audio src={this.state.mergedURL} id="audio-merge" controls="controls"></audio>}
                 </div>            
             </div>

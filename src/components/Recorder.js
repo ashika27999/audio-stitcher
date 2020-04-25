@@ -31,7 +31,6 @@ class Recorder extends Component {
     }
 
     handleRecord(){
-        console.log('Recorder clicked');
         AudioRecorder.start().then(() => {
             this.setState({
                 isRecording: true,
@@ -42,7 +41,6 @@ class Recorder extends Component {
     }
 
     handleStop(){
-        console.log('Recording Stop');
         AudioRecorder.stop().getMp3().then(([buffer, Blob]) => {
             const audioURL = URL.createObjectURL(Blob);
             this.setState({
