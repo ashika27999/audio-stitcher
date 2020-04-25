@@ -5,28 +5,32 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      cardCount: 1,
+      cards: [],
     };
   }
 
   handleAddCard = () => {
+    let tempCards = this.state.cards;
+    tempCards.push(<Card cardNumber={this.state.cards.length} parentCallBack={this.handleDeleteCard}/>)
     this.setState({
-      cardCount: this.state.cardCount + 1,
-    });
+      cards: tempCards,
+    }, console.log(this.state.cards));
   }
 
-  renderCards = () => {
-    let cards = [];
-    for (let i=0;i<this.state.cardCount;i++){
-      cards.push(<Card />);
-    }
-    return(cards);
+  handleDeleteCard = (cardNumber) => {
+    let tempCards = this.state.cards;
+    tempCards = tempCards.splice(cardNumber, 1); 
+    this.setState({
+      cards: tempCards,
+    });
   }
 
   render() {
     return (
       <div id="App">
-        {this.renderCards()}
+        { this.state.cards.map((card) => 
+        <div>{card}</div>
+        )}
         <button className="btn" id="add-card" onClick={this.handleAddCard}><i className="fa fa-plus"></i></button>
       </div>
     );

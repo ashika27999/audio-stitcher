@@ -1,5 +1,6 @@
 .card{
-  background-color: aqua;
+  background-color: whitesmoke;
+  margin-bottom: 10px;
 }
 
 .card-container{
@@ -63,4 +64,21 @@ audio{
   margin-left: 3px;
   padding: 10px;
   width: 100px;
+}
+
+#delete-card{
+  font-size: 20px;
+  background-color: #4CAF50;
+  color: white;
+
+}
+
+#merge-clips{
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+  padding-top: 6px;
+  padding-bottom: 4px;
+  margin-left: 10px;
 }
