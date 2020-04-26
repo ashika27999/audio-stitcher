@@ -9,12 +9,13 @@ class App extends Component {
       audioBlobs: [],
       mergedURL: '',
       isMerged: false,
+      isTranscriptAvailable: false,
     };
   }
 
   handleAddCard = () => {
     let tempCards = this.state.cards;
-    tempCards.push(<Card cardNumber={this.state.cards.length} parentCallBack={this.handleDeleteCard} passMergedBlob={this.getMergedBlob}/>)
+    tempCards.push(<Card cardNumber={this.state.cards.length} parentCallBack={this.handleDeleteCard} passMergedBlob={this.getMergedBlob} isTranscriptAvailable={this.state.isTranscriptAvailable}/>)
     this.setState({
       cards: tempCards,
     });
@@ -22,9 +23,12 @@ class App extends Component {
 
   handleDeleteCard = (cardNumber) => {
     let tempCards = this.state.cards;
+    let tempAudioBlobs = this.state.audioBlobs;
+    delete tempAudioBlobs[cardNumber];
     delete tempCards[cardNumber];
     this.setState({
       cards: tempCards,
+      audioBlobs: tempAudioBlobs,
     });
   }
 
@@ -37,7 +41,7 @@ class App extends Component {
   }
 
   mergeAllBlobs = () => {
-    let mergedBlobs = new Blob(this.state.audioBlobs, {type: "audi/mp3"});
+    let mergedBlobs = new Blob(this.state.audioBlobs, {type: "audio/mp3"});
     let mergedURL = URL.createObjectURL(mergedBlobs);
     this.setState({
       mergedURL: mergedURL,

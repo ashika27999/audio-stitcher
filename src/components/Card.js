@@ -26,7 +26,6 @@ export class Card extends Component {
         }
     }
 
-
     handleBotTextChange = (event) => {
         this.setState({
             botText: event.target.value,
@@ -107,6 +106,13 @@ export class Card extends Component {
         saveAs(transcript, 'transcript.json');
     }
 
+    downloadTranscriptTillSnippet = () => {
+        let transcript = transcripts.slice(0, this.props.cardNumber+1);
+        let transcriptJSON = JSON.stringify(transcript);
+        transcript = new Blob([transcriptJSON], {type: "application/json"});
+        saveAs(transcript, 'transcript.json');
+    }
+
     render() {
         return (
             <div id="Card">
@@ -127,8 +133,9 @@ export class Card extends Component {
                     </div>
                     <button className="btn" id="delete-card" onClick={this.deleteCard} ><i className="fa fa-trash"></i></button>
                     <button className="btn" id="merge-clips" onClick={this.mergeBlobs} >Merge</button>
-                    <button className="btn" id="merge-clips" onClick={this.downloadTranscript}>Download Transcript</button>
                     {this.state.isMerged &&<audio src={this.state.mergedURL} id="audio-merge" controls="controls"></audio>}
+                    <button className="btn" id="merge-clips" onClick={this.downloadTranscript}>Download Transcript</button>
+                    <button className="btn" id="merge-clips" onClick={this.downloadTranscriptTillSnippet}>Download Transcripts till snippet</button>
                 </div>            
             </div>
         )
