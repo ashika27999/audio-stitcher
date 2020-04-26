@@ -29,6 +29,7 @@ class App extends Component {
     this.setState({
       cards: tempCards,
       audioBlobs: tempAudioBlobs,
+      isMerged: false,
     });
   }
 
