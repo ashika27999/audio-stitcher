@@ -37,5 +37,4 @@ npm install
 - Run the application
 ```sh
 npm start
-```
-- 
+``` 
