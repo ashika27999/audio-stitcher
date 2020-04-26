@@ -1,5 +1,6 @@
 ## Audio Stitcher
-Audio stitcher records conversations between two people, and stitches the conversations to make them into downloadable transcripts or audiobooks of the conversations or any particular snippet of the conversation.
+Audio stitcher records conversations between two people, and stitches the conversations to make them into downloadable transcripts or audiobooks of the conversations or any particular snippet of the conversation.  
+The project is active on Heroku: https://aud1o-stitcher.herokuapp.com/
 
 ## Build status
 The project is in it's alpha stage. 
