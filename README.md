@@ -1,5 +1,8 @@
 ## Audio Stitcher
-Audio stitcher records conversations between two people, and stitches the conversations to make them into downloadable transcripts or audiobooks of the conversations or any particular snippet of the conversation.
+Audio stitcher records conversations between two people, and stitches the conversations to make them into downloadable transcripts or audiobooks of the conversations or any particular snippet of the conversation.  
+This project is hosted on Heroku:
+- Server: https://act1vity-tracker.herokuapp.com/
+- Client: https://act1v1ty-tracker.herokuapp.com/
 
 ## Build status
 The project is in it's alpha stage. 
